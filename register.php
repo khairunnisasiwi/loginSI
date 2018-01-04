@@ -9,18 +9,6 @@
 <form action="reg_act.php" method="post">
 <div> Username :</div>
 <input name="username" type="text" />
-<div> Fullname :</div>
-<input name="fullname" type="text" />
-<div> Role :</div>
-<input name="role" type="text" />
-<div> Nomor Pegawai :</div>
-<input name="employee_number" type="text" />
-<div> E-mail :</div>
-<input name="email" type="text" />
-<div> No.Hp :</div>
-<input name="phonenumber" type="text" />
-<div> Address :</div>
-<input name="address" type="text" />
 <div> Password :</div>
 <input name="password" type="password" />
 <div>Confirm Password :</div>
