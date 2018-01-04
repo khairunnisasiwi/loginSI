@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2018 at 03:52 AM
+-- Generation Time: Jan 04, 2018 at 05:04 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -70,6 +70,24 @@ CREATE TABLE `session` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `signup`
+--
+
+CREATE TABLE `signup` (
+  `username` varchar(50) NOT NULL,
+  `fullname` varchar(100) NOT NULL,
+  `role` int(1) NOT NULL,
+  `employee_number` int(5) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone_number` varchar(12) NOT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `confirm_password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userprofile`
 --
 
@@ -126,6 +144,14 @@ ALTER TABLE `session`
   ADD KEY `userid` (`userid`);
 
 --
+-- Indexes for table `signup`
+--
+ALTER TABLE `signup`
+  ADD PRIMARY KEY (`username`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- Indexes for table `userprofile`
 --
 ALTER TABLE `userprofile`
@@ -136,7 +162,8 @@ ALTER TABLE `userprofile`
 -- Indexes for table `user_table`
 --
 ALTER TABLE `user_table`
-  ADD PRIMARY KEY (`userid`);
+  ADD PRIMARY KEY (`userid`),
+  ADD KEY `user_table_username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -170,6 +197,12 @@ ALTER TABLE `session`
 ALTER TABLE `userprofile`
   ADD CONSTRAINT `userprofile_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user_table` (`userid`),
   ADD CONSTRAINT `userprofile_ibfk_2` FOREIGN KEY (`profileID`) REFERENCES `profile` (`profileID`);
+
+--
+-- Constraints for table `user_table`
+--
+ALTER TABLE `user_table`
+  ADD CONSTRAINT `user_table_username` FOREIGN KEY (`username`) REFERENCES `signup` (`username`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
