@@ -15,6 +15,16 @@
 <input name="confirm" type="password" />
 <div> Fullname :</div>
 <input name="fullname" type="text" />
+<div> Role :</div>
+<input name="role" type="text" />
+<div> Employee_number :</div>
+<input name="employee_number" type="text" />
+<div> E-mail :</div>
+<input name="email" type="text" />
+<div> Phone Number :</div>
+<input name="phonenumber" type="text" />
+<div> Address :</div>
+<input name="address" type="text" />
 <input type="submit" value="Register" />
 </form>
 </body>

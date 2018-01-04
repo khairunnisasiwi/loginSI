@@ -1,8 +1,14 @@
-<?php include "db.php"; $username = addslashes(strip_tags ($_POST['username']));
+<?php include "db.php"; 
+ $username = addslashes(strip_tags ($_POST['username']));
  $password = addslashes(strip_tags ($_POST['password'])); 
  $confirm = addslashes(strip_tags ($_POST['confirm'])); 
- $fullname = addslashes(strip_tags ($_POST['fullname'])); //script ini untuk mengecek apakah form sudah terisi semua 
-if ($username&&$password&&$confirm&&$fullname) { //berfunsgi untuk mengecek form tidak boleh lebih dari 10 
+ $fullname = addslashes(strip_tags ($_POST['fullname'])); 
+ $role = addslashes(strip_tags ($_POST['role']));
+ $employee_number = addslashes(strip_tags ($_POST['employee_number']));
+ $email = addslashes(strip_tags ($_POST['email']));
+ $phonenumber = addslashes(strip_tags ($_POST['phonenumber']));
+ $address = addslashes(strip_tags ($_POST['address']));//script ini untuk mengecek apakah form sudah terisi semua 
+if ($username&&$password&&$confirm&&$fullname&&$role&&$employee_number&&$email&&$phonenumber&&$address) { //berfunsgi untuk mengecek form tidak boleh lebih dari 10 
     if (strlen($username) > 10){
     echo "username tidak boleh lebih dari 10 karakter";
 }
@@ -20,7 +26,7 @@ else {
             if ($num_row ==0) {
                 $password = md5($password);
                 $confirm = md5($confirm);
-                $sql_insert = mysql_query("INSERT INTO users VALUES ('','$username','$password','$confirm','$fullname')");
+                $sql_insert = mysql_query("INSERT INTO users VALUES ('','$username','$password','$confirm','$fullname','$role','$employee_number','$email','$phonenumber','$address')");
                 echo "Pendaftaran berhasil. Login <a href='index.php'>disini</a>";
             }
             else {
