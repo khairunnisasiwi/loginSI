@@ -39,3 +39,12 @@
       </tr>
     </table>
     </form>
+
+    <form name="signinform" action="register.php" method="post">
+      <table width="309" border="0" align="center" cellpadding="2" cellspacing="5">
+      <tr>
+        <td><div align="right"></div></td>
+        <td><input name="" type="submit" value="sign in" /></td>
+      </tr>
+      </table>
+    </form>
