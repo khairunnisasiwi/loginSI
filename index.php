@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-     <!-- Bootstrap core CSS -->
+     <!-- Bootstrap core CSS 34 -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
 
 
