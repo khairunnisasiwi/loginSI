@@ -13,6 +13,8 @@
 <input name="password" type="password" />
 <div>Confirm Password :</div>
 <input name="confirm" type="password" />
+<div> Fullname :</div>
+<input name="fullname" type="text" />
 <input type="submit" value="Register" />
 </form>
 </body>
