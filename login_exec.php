@@ -46,7 +46,7 @@
     	}
      
     	//Create query
-    	$qry="SELECT * FROM member WHERE username='$username' AND password='$password'";
+    	$qry="SELECT * FROM user_table WHERE username='$username' AND password='$password'";
     	$result=mysqli_query($bd, $qry);
      
     	//Check whether the query was successful or not
@@ -55,7 +55,7 @@
     			//Login Successful
     			session_regenerate_id();
     			$member = mysqli_fetch_assoc($result);
-    			$_SESSION['SESS_MEMBER_ID'] = $member['mem_id'];
+    			$_SESSION['SESS_MEMBER_ID'] = $member['userid'];
     			$_SESSION['SESS_FIRST_NAME'] = $member['username'];
     			$_SESSION['SESS_LAST_NAME'] = $member['password'];
     			session_write_close();
