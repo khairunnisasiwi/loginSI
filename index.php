@@ -7,16 +7,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-
-
     <!-- Custom styles for this template -->
-    <link href="assets/css/loginformstyle.css" rel="stylesheet">
+    <link href="xampp/htdocs/loginSI/assets/css/style.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/hover.zoom.js"></script>
     <script src="assets/js/hover.zoom.conf.js"></script>
+
     <?php
       include "connection.php";
     ?>
@@ -50,28 +47,53 @@
     		?>
     	</td>
       </tr>
-      <tr>
-        <td width="116"><div align="right">Username</div></td>
-        <td width="177"><input name="username" type="text" /></td>
-      </tr>
-      <tr>
-        <td><div align="right">Password</div></td>
-        <td><input name="password" type="text" /></td>
-      </tr>
-      <tr>
-        <td><div align="right"></div></td>
-        <td><input name="" type="submit" value="login" /></td>
-      </tr>
-    </table>
-    </form>
+      
+      <div class="container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-4">
+            <div class="account-box">
+                <div class="logo ">
+                    <img src="http://placehold.it/90x38/fff/6E329D&text=LOGO" alt=""/>
+                <div class="container" >
+                    <label><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
 
-    <form name="signinform" action="register.php" method="post">
-      <table width="309" border="0" align="center" cellpadding="2" cellspacing="5">
-      <tr>
-        <td><div align="right"></div></td>
-        <td><input name="" type="submit" value="sign in" /></td>
-      </tr>
-      </table>
-    </form>
+                    <label><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit">Login</button>
+                    <input type="checkbox" checked="checked"> Remember me
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                  <button type="button" class="cancelbtn">Cancel</button>
+                  <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+                
+                <a class="forgotLnk" href="http://www.jquery2dotnet.com">I can't access my account</a>
+                <div class="or-box">
+                    <span class="or">OR</span>
+                    <div class="row">
+                        <div class="col-md-6 row-block">
+                            <a href="http://www.jquery2dotnet.com" class="btn btn-facebook btn-block">Facebook</a>
+                        </div>
+                        <div class="col-md-6 row-block">
+                            <a href="http://www.jquery2dotnet.com" class="btn btn-google btn-block">Google</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="or-box row-block">
+                    <div class="row">
+                        <div class="col-md-12 row-block">
+                            <a href="xampp/htdocs/loginSI/register1.php" class="btn btn-primary btn-block">Create New Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  </table>
+  </form>
   </body>
 </html>
