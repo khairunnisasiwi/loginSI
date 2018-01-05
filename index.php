@@ -69,7 +69,7 @@
       <table width="309" border="0" align="center" cellpadding="2" cellspacing="5">
       <tr>
         <td><div align="right"></div></td>
-        <td><input name="" type="submit" value="sign in" /></td>
+        <td><input name="" type="submit" value="sign up" /></td>
       </tr>
       </table>
     </form>
