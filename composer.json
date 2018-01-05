@@ -1,4 +1,8 @@
 {
+<<<<<<< HEAD
     "name": "siwi/login-si",
+=======
+    "name": "rossi/login-si",
+>>>>>>> 90f68c5a53c2fd4af103dbd95f9e0c0dfa163bdb
     "require": {}
 }

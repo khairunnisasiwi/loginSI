@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2018 at 05:04 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Generation Time: Jan 04, 2018 at 09:27 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -99,6 +99,32 @@ CREATE TABLE `userprofile` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(150) NOT NULL,
+  `confirm` varchar(150) NOT NULL,
+  `fullname` varchar(32) NOT NULL,
+  `role` int(11) NOT NULL,
+  `employee_number` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone_number` varchar(20) NOT NULL,
+  `address` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `confirm`, `fullname`, `role`, `employee_number`, `email`, `phone_number`, `address`) VALUES
+(28, 'ica', 'eaad965a78022b95d37c3191e334472f', 'eaad965a78022b95d37c3191e334472f', 'ica', 1, 123, 'ica', '123', 'as2');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_table`
 --
 
@@ -159,6 +185,12 @@ ALTER TABLE `userprofile`
   ADD KEY `profileID` (`profileID`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user_table`
 --
 ALTER TABLE `user_table`
@@ -169,6 +201,11 @@ ALTER TABLE `user_table`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `user_table`
 --
