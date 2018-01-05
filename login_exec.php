@@ -25,7 +25,7 @@
      
     	//Sanitize the POST values
     	$username = $_POST['username'];
-    	$password = $_POST['password'];
+    	$password = md5($_POST['password']);
      
     	//Input Validations
     	if($username == '') {
@@ -55,9 +55,9 @@
     			//Login Successful
     			session_regenerate_id();
     			$member = mysqli_fetch_assoc($result);
-    			$_SESSION['SESS_MEMBER_ID'] = $member['userid'];
-    			$_SESSION['SESS_FIRST_NAME'] = $member['username'];
-    			$_SESSION['SESS_LAST_NAME'] = $member['password'];
+    			$_SESSION['SESS_ID'] = $member['id'];
+    			$_SESSION['SESS_USERNAME'] = $member['username'];
+    			$_SESSION['SESS_PASSWORD'] = $member['password'];
     			session_write_close();
     			header("location: home.php");
     			exit();
@@ -76,3 +76,4 @@
     		die("Query failed");
     	}
     ?>
+
