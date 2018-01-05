@@ -1,4 +1,5 @@
-{
-    "name": "rossi/login-si",
-    "require": {}
+{   "name": "rossi/login-si",
+    "require": {
+        "laravel/installer": "^1.5"
+    }
 }
