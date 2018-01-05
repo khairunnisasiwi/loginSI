@@ -21,4 +21,19 @@
     <p align="center">This page is the home, you can put some stuff here......</p>
     <p align="center"><a href="index.php">logout</a></p>
     </body>
+
+
+
+     <body>
+    <p align="center" class="style1">Password expired </p>
+    <form name="signinform" action="changepass.php" method="post">
+      <table width="309" border="0" align="center" cellpadding="2" cellspacing="5">
+      <tr>
+        <td><div align="right"></div></td>
+        <td><input name="" type="submit" value="Change Password" /></td>
+      </tr>
+      </table>
+    </form>
+    <p align="center"><a href="index.php">logout</a></p>
+    </body>
     </html>

@@ -46,7 +46,7 @@
     	}
      
     	//Create query
-    	$qry="SELECT * FROM user_table WHERE username='$username' AND password='$password'";
+    	$qry="SELECT * FROM users WHERE username='$username' AND password='$password'";
     	$result=mysqli_query($bd, $qry);
      
     	//Check whether the query was successful or not
