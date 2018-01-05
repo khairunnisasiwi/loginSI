@@ -27,7 +27,7 @@ if (isset($_POST["ResetPasswordForm"]))
 	$salt = "498#2D83B631%3800EBD!801600D*7E3CC13";
 
 	// Generate the reset key
-	$resetkey = hash('sha512', $salt.$email);
+	$resetkey = hash('md5', $salt.$email);
 
 	// Does the new reset key match the old one?
 	if ($resetkey == $hash)
@@ -35,7 +35,7 @@ if (isset($_POST["ResetPasswordForm"]))
 		if ($password == $confirmpassword)
 		{
 			//has and secure the password
-			$password = hash('sha512', $salt.$password);
+			$password = hash('md5', $salt.$password);
 
 			// Update the user's password
 				$query = $conn->prepare('UPDATE users SET password = :password WHERE email = :email');

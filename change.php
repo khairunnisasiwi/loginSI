@@ -37,7 +37,7 @@ if (isset($_POST["ForgotPassword"])) {
 		$salt = "498#2D83B631%3800EBD!801600D*7E3CC13";
 
 		// Create the unique user password reset key
-		$password = hash('sha512', $salt.$userExists["email"]);
+		$password = hash('md5', $salt.$userExists["email"]);
 
 		// Create a url which we will direct them to reset their password
 		$pwrurl = "www.yoursitehere.com/reset_password.php?q=".$password;
