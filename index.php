@@ -32,10 +32,10 @@
       </tr>
       <tr>
         <td><div align="right">Password</div></td>
-        <td><input name="password" type="text" /></td>
+        <td><input name="password" type="password" /></td>
       </tr>
       <tr>
-        <td><div align="right"></div></td>
+        <td><a href="forgot_password.php">Forgot password?</a></td>
         <td><input name="" type="submit" value="login" /></td>
       </tr>
     </table>
@@ -46,8 +46,8 @@
       <!--FORM SIGN IN-->
       <table width="309" border="0" align="center" cellpadding="2" cellspacing="5">
       <tr>
-        <td><div align="right"></div></td>
-        <td><input name="" type="submit" value="signin" /></td>
+        <td width="116"><div align="right"></div></td>
+        <td width="177"><input name="" type="submit" value="signin" /></td>
       </tr>
     </table>
   </form>
