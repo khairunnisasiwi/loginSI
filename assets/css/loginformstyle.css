@@ -1,34 +1,97 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-/*login page*/
-body { 
-  background: url(http://lorempixel.com/1920/1920/city/9/) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-  /* Titles */
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #333;
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+border: 2px solid black;
+height:500;
+width:500;
+padding:10;
 }
 
-h1 {
-	font-size: 35px;
-	margin-top: 30px;
-	margin-bottom: 30px;
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-h6 {
-	color: #fff;
-}
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
-.panel-default {
-opacity: 0.9;
-margin-top:30px;
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
 }
 
-.form-group.last { margin-bottom:0px; }
+/*container form*/
+.containerform {
+	width:400pc;
+	height:400px;
+	border: 2px solid rgba(153, 153, 153, 0.75);
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    -o-border-radius: 2px;
+    z-index: 3;
+    font-size: 13px !important;
+    font-family: "Helvetica Neue" ,Helvetica,Arial,sans-serif;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+	position: middle;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+/* Add padding to containers */
+.loginform {
+    padding: 30px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+   ;
+}
+
+    .cancelbtn {
+        width: 100%;
+   ;
+}
+}

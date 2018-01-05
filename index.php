@@ -1,3 +1,12 @@
+   <?php
+        //Start session
+        session_start();    
+        //Unset the variables stored in session
+        unset($_SESSION['SESS_MEMBER_ID']);
+        unset($_SESSION['SESS_FIRST_NAME']);
+        unset($_SESSION['SESS_LAST_NAME']);
+    ?>
+
     <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +17,7 @@
     <meta name="author" content="">
 
     <!-- Custom styles for this template -->
-    <link href="xampp/htdocs/loginSI/assets/css/style.css" rel="stylesheet">
+    <link href="xampp/htdocs/loginSI/assets/css/loginformstyle.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/hover.zoom.js"></script>
@@ -19,18 +28,8 @@
     ?>
   </head>
 
-  <body>
-    <?php
-    	//Start session
-    	session_start();	
-    	//Unset the variables stored in session
-    	unset($_SESSION['SESS_MEMBER_ID']);
-    	unset($_SESSION['SESS_FIRST_NAME']);
-    	unset($_SESSION['SESS_LAST_NAME']);
-    ?>
-    
-
-    <form name="loginform" action="login_exec.php" method="post">
+  <body> 
+    <form name="loginform" action="login_exec.php" method="post" style="top: 50% bottom: 50%">
     <table width="309" border="0" align="center" cellpadding="2" cellspacing="5">
       <tr>
         <td colspan="2">
@@ -45,55 +44,35 @@
     			unset($_SESSION['ERRMSG_ARR']);
     			}
     		?>
-    	</td>
+         </td>
+
+         <td>
+          <div class="imgcontainer" align="center">
+            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+         </div>
+
+         <div class="container" align="left">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+         </div>
+         <br>
+         <div class="container" align="left">
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+         </div>
+
+         <div class="container" align="center"> 
+            <button type="submit">Login</button>
+            <input type="checkbox" checked="checked"> Remember me
+         </div>
+
+         <div class="container" align="center">
+            <button type="button" class="cancelbtn">Sign Up <a href="xampp/htdocs/loginSI/register.php"></a></button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+         </div>
+        </td>
       </tr>
-      
-      <div class="container">
-    <div class="row">
-        <div class="col-md-3 col-md-offset-4">
-            <div class="account-box">
-                <div class="logo ">
-                    <img src="http://placehold.it/90x38/fff/6E329D&text=LOGO" alt=""/>
-                <div class="container" >
-                    <label><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
-
-                    <label><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-
-                    <button type="submit">Login</button>
-                    <input type="checkbox" checked="checked"> Remember me
-                </div>
-
-                <div class="container" style="background-color:#f1f1f1">
-                  <button type="button" class="cancelbtn">Cancel</button>
-                  <span class="psw">Forgot <a href="#">password?</a></span>
-                </div>
-                
-                <a class="forgotLnk" href="http://www.jquery2dotnet.com">I can't access my account</a>
-                <div class="or-box">
-                    <span class="or">OR</span>
-                    <div class="row">
-                        <div class="col-md-6 row-block">
-                            <a href="http://www.jquery2dotnet.com" class="btn btn-facebook btn-block">Facebook</a>
-                        </div>
-                        <div class="col-md-6 row-block">
-                            <a href="http://www.jquery2dotnet.com" class="btn btn-google btn-block">Google</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="or-box row-block">
-                    <div class="row">
-                        <div class="col-md-12 row-block">
-                            <a href="xampp/htdocs/loginSI/register1.php" class="btn btn-primary btn-block">Create New Account</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  </table>
+    </table>
   </form>
   </body>
 </html>
