@@ -36,6 +36,12 @@
 			<td><input name="employee_number" type="text" /></td>
 		</tr>
 		<tr>
+        	<td><div>Bagian </div></td>
+        	<td><input type="radio" name="profile" <?php if (isset($profile) && $profile==1) echo "checked";?> value=1>Keuangan
+        		<input type="radio" name="profile" <?php if (isset($profile) && $profile==2) echo "checked";?> value=2>Pemasaran
+			</td>
+		</tr>
+		<tr>
 			<td><div>E-mail </div></td>
 			<td><input name="email" type="email" required /></td>
 		</tr>
