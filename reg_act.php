@@ -9,7 +9,7 @@
  $email = addslashes(strip_tags ($_POST['email']));
  $phonenumber = addslashes(strip_tags ($_POST['phonenumber']));
  $address = addslashes(strip_tags ($_POST['address']));//script ini untuk mengecek apakah form sudah terisi semua 
-if ($username&&$password&&$confirm&&$fullname&&$role&&$employee_number&&$profile&&$email&&$phonenumber&&$address) { //berfunsgi untuk mengecek form tidak boleh lebih dari 10 
+ if ($username&&$password&&$confirm&&$fullname&&$role||$employee_number&&$profile&&$email&&$phonenumber&&$address) { //berfunsgi untuk mengecek form tidak boleh lebih dari 10 
     //atur password policy
     $max_length = mysqli_query($bd, "SELECT max_pass_length FROM profile where profile = '$profile'");
     $min_length = mysqli_query($bd, "SELECT min_pass_length FROM profile where profile = '$profile'");
@@ -86,8 +86,8 @@ if ($username&&$password&&$confirm&&$fullname&&$role&&$employee_number&&$profile
             }
         }
     }
-}
-else {
+ }
+ else {
     echo "Tolong penuhi form pendaftaran!";
-}
+ }
 ?>
