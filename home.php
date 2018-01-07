@@ -24,7 +24,10 @@
 
 
 
-     <body>
+    <body>
+
+
+    <p align="center" class="style1">Your password is valid until</p>
     <p align="center" class="style1">Password expired </p>
     <form name="signinform" action="changepass.php" method="post">
       <table width="309" border="0" align="center" cellpadding="2" cellspacing="5">
