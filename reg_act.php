@@ -10,7 +10,6 @@
  $phonenumber = addslashes(strip_tags ($_POST['phonenumber']));
  $address = addslashes(strip_tags ($_POST['address']));//script ini untuk mengecek apakah form sudah terisi semua 
 if ($username&&$password&&$confirm&&$fullname&&$role&&$employee_number&&$profile&&$email&&$phonenumber&&$address) { //berfunsgi untuk mengecek form tidak boleh lebih dari 10 
-
     //atur password policy
     $max_length = mysqli_query($bd, "SELECT max_pass_length FROM profile where profile = '$profile'");
     $min_length = mysqli_query($bd, "SELECT min_pass_length FROM profile where profile = '$profile'");
@@ -44,39 +43,46 @@ if ($username&&$password&&$confirm&&$fullname&&$role&&$employee_number&&$profile
 
             //tes masuk policy atau tidak
             if ($upcase < $minup['min_uppercase']) {
-                echo "Minimal huruf besar: ". $minup['min_uppercase'];
+                echo "Password harus memiliki minimal huruf besar: ". $minup['min_uppercase'];
                 echo "<br>";
-            }
-            if ($locase < $minlo['min_lowercase']) {
-                echo "Minimal huruf kecil: ". $minlo['min_lowercase'];
-                echo "<br>";
-            }
-            if ($nucase < $minnc['min_numeric']){
-                echo "Minimal angka: ". $minnc['min_lowercase'];
-                echo "<br>";
-            }
-            if ($spcase < $minsc['min_special_char']){
-                echo "Minimal karakter khusus: ". $minsc['min_special_char'];
-                echo "<br>";
-            }
-            
-            //untuk mengecek apakah form password dan form konfirmasi password sudah sama
-            if ($password == $confirm){
-                $sql_get = mysqli_query ($bd, "SELECT * FROM users WHERE username = '$username'");
-                $num_row = mysqli_num_rows ($sql_get);
-                //fungsi script ini adalah untuk mengecek ketersediaan username, jika tidak tersedia maka program akan berjalan
-                if ($num_row ==0) {
-                    $password = md5($password);
-                    $confirm = md5($confirm);
-                    $sql_insert = mysqli_query($bd, "INSERT INTO users VALUES ('','$username','$password','$confirm','$fullname','$role','$employee_number','$email','$phonenumber','$address')");
-                    echo "Pendaftaran berhasil. Login <a href='index.php'>disini</a>";
-                }
-                else {
-                    echo "Username sudah terdaftar";
-                }
             }
             else {
-                echo "Password yang kamu masukan tidak sama!";
+                if ($locase < $minlo['min_lowercase']) {
+                    echo "Password harus memiliki minimal huruf kecil: ". $minlo['min_lowercase'];
+                    echo "<br>";
+                }
+                else {
+                    if ($nucase < $minnc['min_numeric']){
+                        echo "Password harus memiliki minimal angka: ". $minnc['min_lowercase'];
+                        echo "<br>";
+                    }
+                    else {
+                        if ($spcase < $minsc['min_special_char']){
+                            echo "Password harus memiliki minimal karakter khusus: ". $minsc['min_special_char'];
+                            echo "<br>";
+                        }
+            //untuk mengecek apakah form password dan form konfirmasi password sudah sama
+                        else{
+                            if ($password == $confirm){
+                                $sql_get = mysqli_query ($bd, "SELECT * FROM users WHERE username = '$username'");
+                                $num_row = mysqli_num_rows ($sql_get);
+                //fungsi script ini adalah untuk mengecek ketersediaan username, jika tidak tersedia maka program akan berjalan
+                                if ($num_row ==0) {
+                                    $password = md5($password);
+                                    $confirm = md5($confirm);
+                                    $sql_insert = mysqli_query($bd, "INSERT INTO users VALUES ('','$username','$password','$confirm','$fullname','$role','$employee_number','$profile','$email','$phonenumber','$address')");
+                                    echo "Pendaftaran berhasil. Login <a href='index.php'>disini</a>";
+                                }
+                                else {
+                                    echo "Username sudah terdaftar";
+                                }
+                            }
+                            else {
+                                echo "Password yang kamu masukan tidak sama!";
+                            }
+                        }
+                    }
+                }
             }
         }
     }
