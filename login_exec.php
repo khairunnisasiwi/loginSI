@@ -26,7 +26,7 @@
     	//Sanitize the POST values
     	$username = $_POST['username'];
     	$password = md5($_POST['password']);
-     
+        
     	//Input Validations
     	if($username == '') {
     		$errmsg_arr[] = 'Username missing';
@@ -62,7 +62,7 @@
     			header("location: home.php");
     			exit();
     		}else {
-    			//Login failed
+                //Login failed
     			$errmsg_arr[] = 'user name and password not found';
     			$errflag = true;
     			if($errflag) {

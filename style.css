@@ -1,0 +1,168 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gotham', sans-serif;
+    font-weight: 700;
+    color: #333;
+}
+
+h1{
+    font-size: 200px bold;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: solid black;
+}
+
+
+button{
+    color: #ffffff;
+}
+
+/* body{
+    background-image: url("si.jpg");
+}
+
+body.img-fluid{
+    width: 100%;
+    background-repeat:no-repeat;
+    background-size:100% 100%; 
+
+} */
+
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 20px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+    float: left;
+}
+
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.account-wall
+{
+    margin-top: 40px;
+    padding: 10px 10px 10px 10px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius:0
+}
+
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+
+.profile-img
+{
+    width:35%;
+    margin-top: 20px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 0%;
+    margin-bottom: 0.5cm;
+}
+
+.need-help
+{
+    margin-top: 10px;
+    float: left;
+}
+
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}
+
+.container {
+    position: relative;
+    margin-top: 3cm;
+    left:20%;
+   }
+
+.regcontainer {
+    height: 400px;
+    position: relative;
+    margin-top: 2cm;
+    margin-left: 7cm;
+    left:20%;
+   }
+
+.containerfooter {
+    margin-top: 80px;
+    padding: 10px 0px 20px 0px;
+    float: bottom;
+    background-color: #FF0000;
+}
+
+.footer {
+    position: fixed;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: red;
+    text-align: right;
+}
+
+.footer p {
+    color: white;
+
+}
+
+.footer h4{
+    color: white;
+}
+
+.pwdcontainer{
+    height: 150px;
+    position: relative;
+    margin-top: 5cm;
+    padding: 0.5cm;
+    left:30%;
+}
