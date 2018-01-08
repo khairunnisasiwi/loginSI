@@ -17,6 +17,7 @@
     $min_loc = mysqli_query($bd, "SELECT min_lowercase FROM profile where profile = '$profile'");
     $min_num = mysqli_query($bd, "SELECT min_numeric FROM profile where profile = '$profile'");
     $min_spc = mysqli_query($bd, "SELECT min_special_char FROM profile where profile = '$profile'");
+    $exp_pass = mysqli_query($bd, "SELECT expiry_pass FROM profile where profile = '$profile'");
 
     $minlg = mysqli_fetch_array($min_length);
     $maxlg = mysqli_fetch_array($max_length);
@@ -24,6 +25,7 @@
     $minlo = mysqli_fetch_array($min_loc);
     $minnc = mysqli_fetch_array($min_num);
     $minsc = mysqli_fetch_array($min_spc);
+    $expwd = mysqli_fetch_array($exp_pass);
 
     if (strlen($username) > 10){
         echo "username tidak boleh lebih dari 10 karakter";
@@ -70,8 +72,16 @@
                                 if ($num_row ==0) {
                                     $password = md5($password);
                                     $confirm = md5($confirm);
-                                    $sql_insert = mysqli_query($bd, "INSERT INTO users VALUES ('','$username','$password','$confirm','$fullname','$role','$employee_number','$profile','$email','$phonenumber','$address')");
-                                    echo "Pendaftaran berhasil. Login <a href='index.php'>disini</a>";
+                                    $expire = $expwd['expiry_pass'];
+                                    $sql_insert = mysqli_query($bd, "INSERT INTO users VALUES ('','$username','$password','$confirm','$fullname','$role','$employee_number','$profile','$email','$phonenumber','$address', NOW(), NOW(), NOW() + interval '$expire' day)");
+
+                                    $valid_until = mysqli_query($bd, "SELECT date_password_expiry FROM users WHERE username = '$username'");
+                                    $valid = mysqli_fetch_array ($valid_until);
+                                   // $date_expiry = date_add($date, date_interval_create_from_date_string($expwd));
+                                    echo "Pendaftaran berhasil <br>";
+                                    echo "Welcome " . $fullname. "<br>";
+                                    echo "Your password is valid until " .$valid['date_password_expiry'] . "<br>";
+                                    echo "Login <a href='index.php'>disini</a>";
                                 }
                                 else {
                                     echo "Username sudah terdaftar";
