@@ -1,9 +1,8 @@
-
-  <?php
+<?php
       require_once('auth.php');
       require_once('connection.php');
       
-       $username = $_POST['username'];
+      
        $oldpass=md5($_POST['oldpass']);
        $newpass=$_POST['newpass'];
        $confirm=$_POST['confirm'];
@@ -24,7 +23,7 @@
           $update_pwd=mysqli_query($bd, "UPDATE users set password='$newpass' where id= '$id'");
           $update_pwd_date = mysqli_query($bd, "UPDATE users set date_password_created = NOW() where id= '$id'");
           $update_pwd_expiry = mysqli_query($bd, "UPDATE users set date_password_expiry = NOW() + interval '$expire' day where id= '$id'");
-          $valid_until = mysqli_query($bd, "SELECT date_password_expiry FROM users WHERE username = '$username'");
+          $valid_until = mysqli_query($bd, "SELECT date_password_expiry FROM users WHERE id = '$id'");
           $valid = mysqli_fetch_array ($valid_until);
 
           echo "Update Sucessfully !!! <br>";
@@ -41,22 +40,3 @@
       
 
     ?>
-
-<?php
-/*if ($newpassword !=="")
-{
-$querychange = mysql_query("
-UPDATE users SET password='$newpassword' WHERE username='$user'
-");
-if (!mysql_query($querychange ))
-{
-  echo "There was an error in updating your password...";
-  exit();
-}
-
-session_destroy();
-die("Your pass has benn changed.&lt;a href='index.php'&gt;Return&lt;/a&gt; to the main page");
-
-}*/
-?>
-
