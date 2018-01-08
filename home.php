@@ -14,15 +14,27 @@
             }
         </style>
     </head>
-     
 
     <body>
         <form action="welcome.php" method="post" name="welcome">
-            <?php echo '<b>Welcome:</b>'.$_SESSION['SESS_USERNAME']; ?>
+            <?php 
+                echo '<b>Welcome:</b>'.$_SESSION['SESS_USERNAME']. '<br>';  
+                $id = $_SESSION['SESS_ID'];
+                $expdate = mysqli_query($bd, "SELECT date_password_expiry FROM users WHERE id = '$id'");
+                $exp = mysqli_fetch_array($expdate);
+                $expired = $exp['date_password_expiry'];
+                $now = strtotime("now");
+
+                if ($now > $expired){
+                    echo "Your password is valid until " .$expired. "<br>";
+                }
+                else{
+                    "Your password has been expired <br>";
+                }
+            ?>
+        <a href="changepass.php">Change Password</a><br>
+        <p align="center"><a href="index.php">logout</a></p><br>
         </form>
-        <?php echo 'Your password is valid until'; ?>
-        <a href="changepass.php">Change Password</a>
-        <p align="center"><a href="index.php">logout</a></p>
     </body>
     <!--<body>
     <p align="center" class="style1">Login successfully </p>
